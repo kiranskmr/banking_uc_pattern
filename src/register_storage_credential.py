@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog - Storage Credential Registration
+# MAGIC # Unity Catalog Storage Credential Registration
 # MAGIC 
 # MAGIC This notebook provides functionality to register storage credentials in Unity Catalog.
 
@@ -10,8 +10,7 @@ from databricks.sdk import WorkspaceClient
 from databricks.sdk.service.catalog import (
     AzureManagedIdentity,
     AzureServicePrincipal,
-    AwsIamRole,
-    GcpServiceAccountKey
+    AwsIamRole
 )
 
 # COMMAND ----------
@@ -60,12 +59,6 @@ def register_storage_credential(credential_name, credential_type, credential_det
             credential = AwsIamRole(
                 role_arn=credential_details["role_arn"]
             )
-        elif credential_type == "gcp_service_account":
-            credential = GcpServiceAccountKey(
-                email=credential_details["email"],
-                private_key_id=credential_details["private_key_id"],
-                private_key=credential_details["private_key"]
-            )
         else:
             raise ValueError(f"Unsupported credential type: {credential_type}")
         
@@ -99,8 +92,7 @@ print("\nCredential Types:")
 print("1. Azure Managed Identity")
 print("2. Azure Service Principal")
 print("3. AWS IAM Role")
-print("4. GCP Service Account")
-credential_type_choice = input("Enter the credential type (1-4): ")
+credential_type_choice = input("Enter the credential type (1-3): ")
 
 credential_details = {}
 if credential_type_choice == "1":
@@ -114,11 +106,6 @@ elif credential_type_choice == "2":
 elif credential_type_choice == "3":
     credential_type = "aws_iam_role"
     credential_details["role_arn"] = input("Enter the IAM role ARN: ")
-elif credential_type_choice == "4":
-    credential_type = "gcp_service_account"
-    credential_details["email"] = input("Enter the service account email: ")
-    credential_details["private_key_id"] = input("Enter the private key ID: ")
-    credential_details["private_key"] = input("Enter the private key: ")
 else:
     raise ValueError("Invalid credential type choice")
 
