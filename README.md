@@ -25,4 +25,9 @@ A liquidity crisis can lead to a bank run, which can cause the bank to fail.
 
 For the sake of this usecase we will consider the below systems as part of the liquidity risk domain.
 
-![Liquidity Risk Diagram](images/liquidityrisk_systems.png)
+![Liquidity Risk Systems](images/liquidityrisk_systems.png)
+
+
+The team ingests data from these systems as well as data from other business units like Wealth Management, Investment Banking and Asset Management. The data architecture for liquidity risk looks as below.
+
+![Liquidity Risk dat Architecture](images/Liqudityrisk_arch.png)
