@@ -28,13 +28,43 @@ A liquidity crisis can lead to a bank run, which can cause the bank to fail.
 
 For the sake of this usecase we will consider the below systems as part of the liquidity risk domain.
 
-![Liquidity Risk Systems](images/liquidityrisk_systems.png)
+<div align="center">
+  <img src="images/liquidityrisk_systems.png" alt="Liquidity Risk Systems" width="800"/>
+  
+  *Core Systems Supporting Liquidity Risk Management*
+  
+  ---
+  
+  🏦 **Key Systems** 🏦
+</div>
 
 
-The liquidity risk team ingests data from these systems and other business units like Wealth Management, Investment Banking, and Asset Management. The data architecture for liquidity risk is illustrated below:
+The liquidity risk team ingests data from multiple sources and formats:
+
+🔄 **Source Systems**:
+- Internal Liquidity Risk Systems (e.g., Cash Flow Projections, Stress Testing)
+- Business Units:
+  - Wealth Management (Parquet files, PostgreSQL)
+  - Investment Banking (Oracle DB, REST APIs)
+  - Asset Management (CSV files, SQL Server)
+  - Treasury (Real-time market data feeds)
+
+📊 **Data Processing**:
+- Raw data is ingested into Bronze tables
+- Standardized and validated in Silver tables
+- Business logic applied in Gold tables following the medallion architecture
+- Data quality checks and reconciliation at each layer
+
+🔐 **Data Access**:
+- Processed data is shared back with business units
+- Dynamic row-level filtering ensures each unit only sees their relevant data
+- Example: Wealth Management only accesses their client positions
+- Access controlled via Unity Catalog permissions
+
+The complete data flow architecture for liquidity risk is illustrated below:
 
 
-![Liquidity Risk dat Architecture](images/Liqudityrisk_arch.png)
+![Liquidity Risk data Architecture](images/Liqudityrisk_arch.png)
 
 ## Getting Started
 
