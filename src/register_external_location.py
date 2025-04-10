@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog - External Location Registration
+# MAGIC # Unity Catalog External Location Registration
 # MAGIC 
 # MAGIC This notebook provides functionality to register external locations in Unity Catalog.
 
@@ -75,6 +75,37 @@ def register_external_location(
     except Exception as e:
         print(f"Error registering external location: {str(e)}")
         raise
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Sample External Location Creation for Risk Domains
+
+# COMMAND ----------
+
+risk_domains = [
+    {"name": "credit_risk_dev", "comment": "Location for credit risk team dev environment", "url": "abfss://credit-risk-dev@storageaccount.dfs.core.windows.net/path"},
+    {"name": "credit_risk_test", "comment": "Location for credit risk team test environment", "url": "abfss://credit-risk-test@storageaccount.dfs.core.windows.net/path"},
+    {"name": "credit_risk_staging", "comment": "Location for credit risk team staging environment", "url": "abfss://credit-risk-staging@storageaccount.dfs.core.windows.net/path"},
+    {"name": "credit_risk_prod", "comment": "Location for credit risk team prod environment", "url": "abfss://credit-risk-prod@storageaccount.dfs.core.windows.net/path"},
+    {"name": "liquidity_risk_dev", "comment": "Location for liquidity risk team dev environment", "url": "abfss://liquidity-risk-dev@storageaccount.dfs.core.windows.net/path"},
+    {"name": "liquidity_risk_test", "comment": "Location for liquidity risk team test environment", "url": "abfss://liquidity-risk-test@storageaccount.dfs.core.windows.net/path"},
+    {"name": "liquidity_risk_staging", "comment": "Location for liquidity risk team staging environment", "url": "abfss://liquidity-risk-staging@storageaccount.dfs.core.windows.net/path"},
+    {"name": "liquidity_risk_prod", "comment": "Location for liquidity risk team prod environment", "url": "abfss://liquidity-risk-prod@storageaccount.dfs.core.windows.net/path"},
+    {"name": "price_risk_dev", "comment": "Location for price risk team dev environment", "url": "abfss://price-risk-dev@storageaccount.dfs.core.windows.net/path"},
+    {"name": "price_risk_test", "comment": "Location for price risk team test environment", "url": "abfss://price-risk-test@storageaccount.dfs.core.windows.net/path"},
+    {"name": "price_risk_staging", "comment": "Location for price risk team staging environment", "url": "abfss://price-risk-staging@storageaccount.dfs.core.windows.net/path"},
+    {"name": "price_risk_prod", "comment": "Location for price risk team prod environment", "url": "abfss://price-risk-prod@storageaccount.dfs.core.windows.net/path"},
+    {"name": "compliance_risk_dev", "comment": "Location for compliance risk team dev environment", "url": "abfss://compliance-risk-dev@storageaccount.dfs.core.windows.net/path"},
+    {"name": "compliance_risk_test", "comment": "Location for compliance risk team test environment", "url": "abfss://compliance-risk-test@storageaccount.dfs.core.windows.net/path"},
+    {"name": "compliance_risk_staging", "comment": "Location for compliance risk team staging environment", "url": "abfss://compliance-risk-staging@storageaccount.dfs.core.windows.net/path"},
+    {"name": "compliance_risk_prod", "comment": "Location for compliance risk team prod environment", "url": "abfss://compliance-risk-prod@storageaccount.dfs.core.windows.net/path"}
+]
+
+credential_name = "your_storage_credential_name"
+
+for domain in risk_domains:
+    register_external_location(domain["name"], domain["comment"], domain["url"], credential_name)
 
 # COMMAND ----------
 
