@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog - Catalog Creation
+# MAGIC # Unity Catalog Creation
 # MAGIC 
 # MAGIC This notebook provides functionality to create catalogs in Unity Catalog.
 
@@ -46,6 +46,35 @@ def create_catalog(catalog_name, catalog_comment=None):
     except Exception as e:
         print(f"Error creating catalog: {str(e)}")
         raise
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Sample Catalog Creation for Risk Domains
+
+# COMMAND ----------
+
+risk_domains = [
+    {"name": "credit_risk_dev", "comment": "Catalog for credit risk team dev environment"},
+    {"name": "credit_risk_test", "comment": "Catalog for credit risk team test environment"},
+    {"name": "credit_risk_staging", "comment": "Catalog for credit risk team staging environment"},
+    {"name": "credit_risk_prod", "comment": "Catalog for credit risk team prod environment"},
+    {"name": "liquidity_risk_dev", "comment": "Catalog for liquidity risk team dev environment"},
+    {"name": "liquidity_risk_test", "comment": "Catalog for liquidity risk team test environment"},
+    {"name": "liquidity_risk_staging", "comment": "Catalog for liquidity risk team staging environment"},
+    {"name": "liquidity_risk_prod", "comment": "Catalog for liquidity risk team prod environment"},
+    {"name": "price_risk_dev", "comment": "Catalog for price risk team dev environment"},
+    {"name": "price_risk_test", "comment": "Catalog for price risk team test environment"},
+    {"name": "price_risk_staging", "comment": "Catalog for price risk team staging environment"},
+    {"name": "price_risk_prod", "comment": "Catalog for price risk team prod environment"},
+    {"name": "compliance_risk_dev", "comment": "Catalog for compliance risk team dev environment"},
+    {"name": "compliance_risk_test", "comment": "Catalog for compliance risk team test environment"},
+    {"name": "compliance_risk_staging", "comment": "Catalog for compliance risk team staging environment"},
+    {"name": "compliance_risk_prod", "comment": "Catalog for compliance risk team prod environment"}
+]
+
+for domain in risk_domains:
+    create_catalog(domain["name"], domain["comment"])
 
 # COMMAND ----------
 
