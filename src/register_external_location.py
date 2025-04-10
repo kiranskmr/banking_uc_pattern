@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog External Location Registration
+# MAGIC # Unity Catalog - External Location Registration
 # MAGIC 
 # MAGIC This notebook provides functionality to register external locations in Unity Catalog.
 

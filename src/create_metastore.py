@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog Metastore Creation
+# MAGIC # Unity Catalog - Metastore Creation
 # MAGIC 
 # MAGIC This notebook provides functionality to create metastores in Unity Catalog.
 

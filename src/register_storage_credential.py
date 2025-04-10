@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog Storage Credential Registration
+# MAGIC # Unity Catalog - Storage Credential Registration
 # MAGIC 
 # MAGIC This notebook provides functionality to register storage credentials in Unity Catalog.
 

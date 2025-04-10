@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # Unity Catalog Creation
+# MAGIC # Unity Catalog - Catalog Creation
 # MAGIC 
 # MAGIC This notebook provides functionality to create catalogs in Unity Catalog.
 
