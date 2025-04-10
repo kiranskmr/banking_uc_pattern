@@ -7,7 +7,7 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ![Metastore Diagram](attachment:image.png)
+# MAGIC ![Metastore Diagram](../images/metastore_deployment.png)
 
 # COMMAND ----------
 

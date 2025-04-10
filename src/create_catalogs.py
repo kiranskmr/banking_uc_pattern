@@ -6,6 +6,11 @@
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC ![Catalog Diagram](../images/catalog_design.png)
+
+# COMMAND ----------
+
 from databricks.sdk import WorkspaceClient
 from databricks.sdk.service.catalog import CatalogInfo
 
