@@ -1,2 +1,2 @@
-# banking_uc_pattern
-Solution accelerator for designing the deployment patterns in Unity catalog for the risk domain in banking.
+# Unity catalog Deployment patterns for banking in the Risk domain
+Solution accelerator for designing the deployment patterns in Unity Catalog for the risk domain in banking.
