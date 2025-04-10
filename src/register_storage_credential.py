@@ -80,6 +80,40 @@ def register_storage_credential(credential_name, credential_type, credential_det
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC ## Sample Storage Credential Creation for Risk Domains
+
+# COMMAND ----------
+
+risk_domains = [
+    {"name": "credit_risk_dev_credential", "comment": "Credential for credit risk dev environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "credit_risk_test_credential", "comment": "Credential for credit risk test environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "credit_risk_staging_credential", "comment": "Credential for credit risk staging environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "credit_risk_prod_credential", "comment": "Credential for credit risk prod environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "liquidity_risk_dev_credential", "comment": "Credential for liquidity risk dev environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "liquidity_risk_test_credential", "comment": "Credential for liquidity risk test environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "liquidity_risk_staging_credential", "comment": "Credential for liquidity risk staging environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "liquidity_risk_prod_credential", "comment": "Credential for liquidity risk prod environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "price_risk_dev_credential", "comment": "Credential for price risk dev environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "price_risk_test_credential", "comment": "Credential for price risk test environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "price_risk_staging_credential", "comment": "Credential for price risk staging environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "price_risk_prod_credential", "comment": "Credential for price risk prod environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "compliance_risk_dev_credential", "comment": "Credential for compliance risk dev environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "compliance_risk_test_credential", "comment": "Credential for compliance risk test environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "compliance_risk_staging_credential", "comment": "Credential for compliance risk staging environment", "managed_identity_id": "dummy-managed-identity-id"},
+    {"name": "compliance_risk_prod_credential", "comment": "Credential for compliance risk prod environment", "managed_identity_id": "dummy-managed-identity-id"}
+]
+
+for domain in risk_domains:
+    register_storage_credential(
+        credential_name=domain["name"],
+        credential_type="azure_managed_identity",
+        credential_details={"managed_identity_id": domain["managed_identity_id"]},
+        comment=domain["comment"]
+    )
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC ## Interactive Storage Credential Registration
 
 # COMMAND ----------
