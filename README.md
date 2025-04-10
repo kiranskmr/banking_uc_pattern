@@ -21,4 +21,8 @@ This can happen if a bank does not have enough cash on hand to meet withdrawals 
 Banks must manage liquidity risk carefully to avoid a liquidity crisis.
 A liquidity crisis can lead to a bank run, which can cause the bank to fail.
 
+### Liquidity Risk Systems
 
+For the sake of this usecase we will consider the below systems as part of the liquidity risk domain.
+
+![Liquidity Risk Diagram](images/liquidityrisk_systems.png)
