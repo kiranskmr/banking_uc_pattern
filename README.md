@@ -13,3 +13,12 @@ The Nine Risk Categories as per OCC
 7. Compliance Risk: Risk from violations of laws and regulations.
 8. Strategic Risk: Risk to earnings or capital from poor business decisions or implementation.
 9. Reputation Risk: Risk to earnings or capital from negative public opinion.
+
+## Liquidity Risk in Banking
+
+Liquidity risk is the risk that a bank will not be able to meet its financial obligations as they come due.
+This can happen if a bank does not have enough cash on hand to meet withdrawals or other obligations.
+Banks must manage liquidity risk carefully to avoid a liquidity crisis.
+A liquidity crisis can lead to a bank run, which can cause the bank to fail.
+
+
