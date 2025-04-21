@@ -113,6 +113,13 @@ This repository includes several scripts and notebooks to facilitate the setup o
 - Registers external storage locations linked to the storage credentials, with samples for each environment
 - **Usage**: Import the script as a notebook, replace placeholder storage URLs with actual paths, and run to set up locations
 
+<div align="center">
+  <img src="images/storage_external.png" alt="Location and Storage Design" width="800"/>
+  
+  *Location and Storage for Liquidity Risk*
+    
+</div>
+
 ## Getting Started
 
 ### Prerequisites
