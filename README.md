@@ -84,6 +84,21 @@ This repository includes several scripts and notebooks to facilitate the setup o
   - Note: This is a prerequisite for creating catalogs and other Unity Catalog objects
 
 ### Catalog Creation
+
+<div align="center">
+  <img src="images/catalog_design.png" alt="Catalog Design" width="800"/>
+  
+  *Catalog design for Risk Domain*
+    
+</div>
+
+<div align="center">
+  <img src="images/catalog_design.png" alt="Schema Design" width="800"/>
+  
+  *Schema design for Liquidity Risk*
+    
+</div>
+
 **create_catalogs.py**
 - Automates the creation of catalogs for each risk domain environment (e.g., credit_risk_dev, liquidity_risk_test)
 - **Usage**: Import the script as a notebook in Databricks and run it to create the necessary catalogs
