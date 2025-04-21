@@ -66,6 +66,38 @@ The complete data flow architecture for liquidity risk is illustrated below:
 
 ![Liquidity Risk data Architecture](images/Liqudityrisk_arch.png)
 
+## Catalogs and Schemas
+
+The liquidity risk team defines catalogs and schemas to organize and share data efficiently. This setup ensures that data is accessible and governed according to organizational policies.
+
+## Scripts and Notebooks
+This repository includes several scripts and notebooks to facilitate the setup of Unity Catalog:
+
+### Metastore Creation
+**create_metastore.py**
+- Creates Unity Catalog metastores for different regions, allowing for multi-region data governance.
+- **Usage**: 
+  - Import the script as a notebook in Databricks
+  - Update the `regions` list with your desired regions (e.g., `uk-south`, `france-central`)
+  - Run the script to create metastores in each specified region
+  - The script will generate unique names for each metastore based on the region
+  - Note: This is a prerequisite for creating catalogs and other Unity Catalog objects
+
+### Catalog Creation
+**create_catalogs.py**
+- Automates the creation of catalogs for each risk domain environment (e.g., credit_risk_dev, liquidity_risk_test)
+- **Usage**: Import the script as a notebook in Databricks and run it to create the necessary catalogs
+
+### Storage Credential Registration  
+**register_storage_credential.py**
+- Registers storage credentials using Azure Managed Identity, with samples for each environment within the risk domains
+- **Usage**: Import the script as a notebook, update the managed_identity_id with your actual ID, and execute to register credentials
+
+### External Location Registration
+**register_external_location.py** 
+- Registers external storage locations linked to the storage credentials, with samples for each environment
+- **Usage**: Import the script as a notebook, replace placeholder storage URLs with actual paths, and run to set up locations
+
 ## Getting Started
 
 ### Prerequisites
@@ -88,21 +120,10 @@ Before running the scripts, you'll need to:
 - Adjust catalog and credential naming conventions if needed
 - Configure access control settings based on your security requirements
 
+### Setup Order
+1. Create metastores using `create_metastore.py`
+2. Register storage credentials using `register_storage_credential.py`
+3. Register external locations using `register_external_location.py`
+4. Create catalogs using `create_catalogs.py`
 
-## Scripts and Notebooks
-This repository includes several scripts and notebooks to facilitate the setup of Unity Catalog:
 
-### Catalog Creation
-**create_catalogs.py**
-- Automates the creation of catalogs for each risk domain environment (e.g., credit_risk_dev, liquidity_risk_test)
-- **Usage**: Import the script as a notebook in Databricks and run it to create the necessary catalogs
-
-### Storage Credential Registration  
-**register_storage_credential.py**
-- Registers storage credentials using Azure Managed Identity, with samples for each environment within the risk domains
-- **Usage**: Import the script as a notebook, update the managed_identity_id with your actual ID, and execute to register credentials
-
-### External Location Registration
-**register_external_location.py** 
-- Registers external storage locations linked to the storage credentials, with samples for each environment
-- **Usage**: Import the script as a notebook, replace placeholder storage URLs with actual paths, and run to set up locations
